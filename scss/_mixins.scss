@@ -1,0 +1,29 @@
+@use "fonts";
+@use "variables" as *;
+
+@mixin medium_font($weight) {
+    @extend .medium_font;
+    font-weight: $weight;
+}
+
+@mixin button($type) {
+    border: 2px solid;
+    border-radius: 40px;
+    width: 170px;
+    height: 40px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    @if $type =="pink" {
+        border-color: $theme;
+        color: #000000;
+        background: white;
+    }
+
+    @if $type =="white" {
+        border-color: #FFFFFF;
+        color: #FFFFFF;
+        background: $theme;
+    }
+}
