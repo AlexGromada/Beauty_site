@@ -15,6 +15,28 @@ body {
     margin: 0 auto;
 }
 
+.borderline {
+    width: 100vw;
+    position: absolute;
+    left: 0;
+    border-top: 1px solid $background;
+}
+
+.callBack {
+    display: flex;
+    align-items: center;
+
+    a {
+        color: black;
+        @include mixins.medium_font(400);
+        padding-right: 40px;
+    }
+
+    button {
+        @include mixins.button("pink")
+    }
+}
+
 ul {
     list-style-type: none;
 }
@@ -77,30 +99,6 @@ header {
                 padding-left: 20px;
             }
         }
-
-        .callBack {
-            display: flex;
-            align-items: center;
-
-            a {
-                color: black;
-                @include mixins.medium_font(400);
-                padding-right: 40px;
-            }
-
-            button {
-                @include mixins.button("pink")
-            }
-        }
-
-    }
-
-    .borderline {
-        width: 100vw;
-        position: absolute;
-        top: 170px;
-        left: 0;
-        border-top: 1px solid $background;
     }
 
     nav {
@@ -272,12 +270,12 @@ main {
                 width: 460px;
                 padding: 35px 40px;
                 background-color: $theme;
-                
+
                 display: flex;
                 align-items: center;
                 justify-content: space-between;
             }
-            
+
             .Mail_Image {
                 width: 140px;
                 height: 106.5px;
@@ -286,12 +284,12 @@ main {
                 justify-content: center;
                 align-items: center;
 
-                >:first-child{
+                >:first-child {
                     position: absolute;
                 }
-            } 
+            }
 
-            >:last-child img{
+            >:last-child img {
                 width: 190px;
                 height: 100px;
             }
@@ -328,6 +326,107 @@ main {
 
         &>:last-child {
             padding-bottom: 80px;
+        }
+    }
+}
+
+footer {
+    .content {
+        .additionalInfo {
+            padding: 60px 0;
+            display: flex;
+            justify-content: space-between;
+
+            &__element {
+                width: 255px;
+
+                p {
+                    width: 99px;
+                    height: 40px;
+                    padding-bottom: 30px;
+                    @include mixins.medium_font(500);
+                    line-height: 141%;
+                }
+
+                div {
+                    width: 100%;
+                    border-top: 1px solid $background;
+
+                    padding-bottom: 25px;
+                }
+
+                ul {
+                    li {
+                        @extend .small_font;
+                        line-height: 28px;
+                        letter-spacing: 0%;
+
+                        a,
+                        a:visited {
+                            color: #828282;
+                        }
+                    }
+                }
+            }
+        }
+
+        .contact {
+            display: flex;
+            justify-content: space-between;
+            padding: 38px 0;
+
+            &__socials {
+                width: 175px;
+                display: flex;
+                justify-content: space-between;
+
+                div {
+                    width: 45px;
+                    height: 45px;
+                    border: 2px solid $theme;
+                    border-radius: 90%;
+
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                }
+
+                >:last-child{
+                    position: relative;
+
+                    div{
+                        width: 22px;
+                        height: 22px;
+                        padding: 11.5px;
+                        position: absolute;
+                    
+                        >:last-child{
+                            position: absolute;
+                            top: 15px;
+                            right: 15px;
+                        }
+                    }
+                }
+            }
+
+            button {
+                @include mixins.button("pink")
+            }
+        }
+    }
+}
+
+.copyright {
+    background-color: $background;
+
+    .content {
+        display: flex;
+        justify-content: space-between;
+
+        p {
+            @extend .small_font;
+            color: #828282;
+            padding: 15px 0;
         }
     }
 }

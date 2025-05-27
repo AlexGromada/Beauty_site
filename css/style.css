@@ -1,17 +1,17 @@
-.average_font, .stickyNav ul, .stickyNav a,
-.stickyNav a:visited, header .content > :first-child .callBack button, main .content .imageBlock__text, main .content .imageBlock button, main .content .productList__element p, main .content .productList__element button, main .content .promoInfo p + p, main .content .promoInfo button {
+.average_font, .callBack button, .stickyNav ul, .stickyNav a,
+.stickyNav a:visited, main .content .imageBlock__text, main .content .imageBlock button, main .content .productList__element p, main .content .productList__element button, main .content .promoInfo p + p, main .content .promoInfo button, footer .content .contact button {
   font-family: Roboto;
   font-weight: 400;
   font-size: 14px;
 }
 
-.small_font {
+.small_font, footer .content .additionalInfo__element ul li, .copyright .content p {
   font-family: Roboto;
   font-weight: 400;
   font-size: 12px;
 }
 
-.medium_font, header .content > :first-child .callBack a, header nav {
+.medium_font, .callBack a, header nav, footer .content .additionalInfo__element p {
   font-family: Roboto;
   font-size: 16px;
   letter-spacing: 0;
@@ -28,6 +28,35 @@ body {
 .content {
   width: 1110px;
   margin: 0 auto;
+}
+
+.borderline {
+  width: 100vw;
+  position: absolute;
+  left: 0;
+  border-top: 1px solid #EFEFEF;
+}
+
+.callBack {
+  display: flex;
+  align-items: center;
+}
+.callBack a {
+  color: black;
+  font-weight: 400;
+  padding-right: 40px;
+}
+.callBack button {
+  border: 2px solid;
+  border-radius: 40px;
+  width: 170px;
+  height: 40px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-color: #F13C6E;
+  color: #000000;
+  background: white;
 }
 
 ul {
@@ -77,34 +106,6 @@ header .content > :first-child .logo p {
   line-height: 100%;
   letter-spacing: 10%;
   padding-left: 20px;
-}
-header .content > :first-child .callBack {
-  display: flex;
-  align-items: center;
-}
-header .content > :first-child .callBack a {
-  color: black;
-  font-weight: 400;
-  padding-right: 40px;
-}
-header .content > :first-child .callBack button {
-  border: 2px solid;
-  border-radius: 40px;
-  width: 170px;
-  height: 40px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  border-color: #F13C6E;
-  color: #000000;
-  background: white;
-}
-header .borderline {
-  width: 100vw;
-  position: absolute;
-  top: 170px;
-  left: 0;
-  border-top: 1px solid #EFEFEF;
 }
 header nav {
   font-weight: 400;
@@ -311,6 +312,92 @@ main .content .impulsBox img {
 }
 main .content > :last-child {
   padding-bottom: 80px;
+}
+
+footer .content .additionalInfo {
+  padding: 60px 0;
+  display: flex;
+  justify-content: space-between;
+}
+footer .content .additionalInfo__element {
+  width: 255px;
+}
+footer .content .additionalInfo__element p {
+  width: 99px;
+  height: 40px;
+  padding-bottom: 30px;
+  font-weight: 500;
+  line-height: 141%;
+}
+footer .content .additionalInfo__element div {
+  width: 100%;
+  border-top: 1px solid #EFEFEF;
+  padding-bottom: 25px;
+}
+footer .content .additionalInfo__element ul li {
+  line-height: 28px;
+  letter-spacing: 0%;
+}
+footer .content .additionalInfo__element ul li a,
+footer .content .additionalInfo__element ul li a:visited {
+  color: #828282;
+}
+footer .content .contact {
+  display: flex;
+  justify-content: space-between;
+  padding: 38px 0;
+}
+footer .content .contact__socials {
+  width: 175px;
+  display: flex;
+  justify-content: space-between;
+}
+footer .content .contact__socials div {
+  width: 45px;
+  height: 45px;
+  border: 2px solid #F13C6E;
+  border-radius: 90%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+footer .content .contact__socials > :last-child {
+  position: relative;
+}
+footer .content .contact__socials > :last-child div {
+  width: 22px;
+  height: 22px;
+  padding: 11.5px;
+  position: absolute;
+}
+footer .content .contact__socials > :last-child div > :last-child {
+  position: absolute;
+  top: 15px;
+  right: 15px;
+}
+footer .content .contact button {
+  border: 2px solid;
+  border-radius: 40px;
+  width: 170px;
+  height: 40px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-color: #F13C6E;
+  color: #000000;
+  background: white;
+}
+
+.copyright {
+  background-color: #EFEFEF;
+}
+.copyright .content {
+  display: flex;
+  justify-content: space-between;
+}
+.copyright .content p {
+  color: #828282;
+  padding: 15px 0;
 }
 
 /*# sourceMappingURL=style.css.map */
