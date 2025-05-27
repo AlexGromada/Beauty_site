@@ -1,5 +1,5 @@
-.average_font, .sticky_nav ul, .sticky_nav a,
-.sticky_nav a:visited, main .imageBlock_text {
+.average_font, .stickyNav ul, .stickyNav a,
+.stickyNav a:visited, header .content > :first-child .callBack button, main .content .imageBlock__text, main .content .imageBlock button, main .content .productList__element p, main .content .productList__element button, main .content .promoInfo p + p, main .content .promoInfo button {
   font-family: Roboto;
   font-weight: 400;
   font-size: 14px;
@@ -11,7 +11,7 @@
   font-size: 12px;
 }
 
-.medium_font, header .content > :first-child .call_back a, header nav {
+.medium_font, header .content > :first-child .callBack a, header nav {
   font-family: Roboto;
   font-size: 16px;
   letter-spacing: 0;
@@ -38,12 +38,12 @@ a {
   text-decoration: none;
 }
 
-.sticky_nav {
+.stickyNav {
   background-color: #EFEFEF;
   position: sticky;
   top: 0;
 }
-.sticky_nav ul {
+.stickyNav ul {
   margin: 0 auto;
   width: 360px;
   height: 17px;
@@ -52,8 +52,8 @@ a {
   display: flex;
   justify-content: space-between;
 }
-.sticky_nav a,
-.sticky_nav a:visited {
+.stickyNav a,
+.stickyNav a:visited {
   color: #333333;
 }
 
@@ -62,8 +62,7 @@ header .content > :first-child {
   justify-content: space-between;
 }
 header .content > :first-child .logo {
-  padding-top: 20px;
-  padding-bottom: 20px;
+  padding: 20px 0;
   display: flex;
   align-items: center;
 }
@@ -79,16 +78,16 @@ header .content > :first-child .logo p {
   letter-spacing: 10%;
   padding-left: 20px;
 }
-header .content > :first-child .call_back {
+header .content > :first-child .callBack {
   display: flex;
   align-items: center;
 }
-header .content > :first-child .call_back a {
+header .content > :first-child .callBack a {
   color: black;
   font-weight: 400;
   padding-right: 40px;
 }
-header .content > :first-child .call_back button {
+header .content > :first-child .callBack button {
   border: 2px solid;
   border-radius: 40px;
   width: 170px;
@@ -109,8 +108,7 @@ header .borderline {
 }
 header nav {
   font-weight: 400;
-  padding-top: 30px;
-  padding-bottom: 30px;
+  padding: 40px 0;
 }
 header nav a,
 header nav a:visited {
@@ -123,14 +121,41 @@ header nav ul {
 }
 
 main {
-  background-color: #F13C6E;
-  background-image: url(../images/main_pick.jpg);
-  background-size: cover;
+  position: relative;
 }
-main .imageBlock {
+main > ::before {
+  height: 100%;
+  width: 100%;
+  content: "";
+  position: absolute;
+  left: 0;
+  z-index: -2;
+  background-color: #EFEFEF;
+}
+main .content__title {
+  padding-top: 80px;
+  padding-bottom: 38px;
+  height: 29px;
+  font-family: Roboto;
+  font-weight: 700;
+  font-size: 24px;
+  line-height: 100%;
+  letter-spacing: 0%;
+}
+main .content .imageBlock {
   height: 604px;
 }
-main .imageBlock_title {
+main .content .imageBlock::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  z-index: -1;
+  width: 100vw;
+  height: 604px;
+  background-image: url("../images/sale_pick.jpg");
+  background-size: cover;
+}
+main .content .imageBlock__title {
   font-family: Roboto;
   font-weight: 700;
   font-size: 48px;
@@ -141,7 +166,7 @@ main .imageBlock_title {
   padding-top: 192px;
   padding-bottom: 50px;
 }
-main .imageBlock_text {
+main .content .imageBlock__text {
   line-height: 20px;
   letter-spacing: 0%;
   color: #FFFFFF;
@@ -149,7 +174,7 @@ main .imageBlock_text {
   height: 35px;
   margin-bottom: 50px;
 }
-main .imageBlock button {
+main .content .imageBlock button {
   border: 2px solid;
   border-radius: 40px;
   width: 170px;
@@ -160,6 +185,132 @@ main .imageBlock button {
   border-color: #FFFFFF;
   color: #FFFFFF;
   background: #F13C6E;
+}
+main .content .productList {
+  display: flex;
+  justify-content: space-between;
+}
+main .content .productList__element {
+  width: 255px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: #FFFFFF;
+}
+main .content .productList__element img {
+  padding-top: 25px;
+  height: 166px;
+  width: 125px;
+  object-fit: cover;
+}
+main .content .productList__element p {
+  width: 195px;
+  line-height: 141%;
+  text-align: center;
+  padding: 20px 0;
+}
+main .content .productList__element p + p {
+  font-family: Roboto;
+  font-weight: 500;
+  font-size: 21px;
+  line-height: 100%;
+  letter-spacing: 5%;
+  text-align: center;
+  padding: 0;
+  margin-bottom: 20px;
+}
+main .content .productList__element button {
+  border: 2px solid;
+  border-radius: 40px;
+  width: 170px;
+  height: 40px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: none;
+  background-color: #F13C6E;
+  width: 130px;
+  height: 35px;
+  border-radius: 30px;
+  margin-bottom: 25px;
+}
+main .content .promoInfo {
+  padding: 100px 0;
+  display: flex;
+  justify-content: space-between;
+}
+main .content .promoInfo p {
+  font-family: Roboto;
+  font-weight: 700;
+  font-size: 18px;
+  height: 17px;
+  color: #FFFFFF;
+}
+main .content .promoInfo p + p {
+  line-height: 141%;
+  width: 129px;
+  height: 40px;
+  padding: 25px 0;
+  color: #FFFFFF;
+}
+main .content .promoInfo > div {
+  width: 460px;
+  padding: 35px 40px;
+  background-color: #F13C6E;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+main .content .promoInfo .Mail_Image {
+  width: 140px;
+  height: 106.5px;
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+main .content .promoInfo .Mail_Image > :first-child {
+  position: absolute;
+}
+main .content .promoInfo > :last-child img {
+  width: 190px;
+  height: 100px;
+}
+main .content .promoInfo input {
+  width: 175px;
+  height: 17px;
+  padding: 9px 25px;
+  border: none;
+  border-radius: 30px;
+  background-color: #FFFFFF;
+  color: #C4C4C4;
+}
+main .content .promoInfo button {
+  border: 2px solid;
+  border-radius: 40px;
+  width: 170px;
+  height: 40px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-color: #FFFFFF;
+  color: #FFFFFF;
+  background: #F13C6E;
+  height: 35px;
+  border-radius: 30px;
+}
+main .content .impulsBox {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+main .content .impulsBox img {
+  border: 1px solid #EFEFEF;
+  padding: 35px 63px;
+  background-color: #FFFFFF;
+}
+main .content > :last-child {
+  padding-bottom: 80px;
 }
 
 /*# sourceMappingURL=style.css.map */

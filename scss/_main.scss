@@ -23,8 +23,8 @@ a {
     text-decoration: none;
 }
 
-.sticky_nav {
-    background-color: #EFEFEF;
+.stickyNav {
+    background-color: $background;
     position: sticky;
     top: 0;
 
@@ -40,6 +40,7 @@ a {
         }
 
         ;
+
         display: flex;
         justify-content: space-between;
     }
@@ -57,12 +58,8 @@ header {
         justify-content: space-between;
 
         .logo {
-            padding: {
-                top: 20px;
-                bottom: 20px;
-            }
+            padding: 20px 0;
 
-            ;
             display: flex;
             align-items: center;
 
@@ -81,7 +78,7 @@ header {
             }
         }
 
-        .call_back {
+        .callBack {
             display: flex;
             align-items: center;
 
@@ -103,15 +100,13 @@ header {
         position: absolute;
         top: 170px;
         left: 0;
-        border-top: 1px solid #EFEFEF;
+        border-top: 1px solid $background;
     }
 
     nav {
         @include mixins.medium_font(400);
-        padding: {
-            top: 30px;
-            bottom: 30px;
-        };
+
+        padding: 40px 0;
 
         a,
         a:visited {
@@ -127,44 +122,212 @@ header {
 }
 
 main {
-    background-color: $theme;
+    position: relative;
 
-    .imageBlock {
-        height: 604px;
+    &>::before {
+        height: 100%;
+        width: 100%;
+        content: "";
+        position: absolute;
+        left: 0;
+        z-index: -2;
+        background-color: $background;
+    }
 
-        &_title {
-            font-family: Roboto;
-            font-weight: 700;
-            font-size: 48px;
-            line-height: 100%;
-            letter-spacing: 0%;
-            color: #FFFFFF;
-            height: 44px;
-
+    .content {
+        &__title {
             padding: {
-                top: 192px;
-                bottom: 50px;
+                top: 80px;
+                bottom: 38px;
             }
 
             ;
-        }
+            height: 29px;
 
-        &_text {
-            @extend .average_font;
-            line-height: 20px;
+            font-family: Roboto;
+            font-weight: 700;
+            font-size: 24px;
+            line-height: 100%;
             letter-spacing: 0%;
-
-            color: #FFFFFF;
-            width: 308px;
-            height: 35px;
-            margin-bottom: 50px;
         }
 
-        button {
-            @include mixins.button("white");
+        .imageBlock {
+            height: 604px;
+
+            &::before {
+                content: "";
+                position: absolute;
+                left: 0;
+                z-index: -1;
+                width: 100vw;
+                height: 604px;
+                background-image: url("../images/sale_pick.jpg");
+                background-size: cover;
+            }
+
+            &__title {
+                font-family: Roboto;
+                font-weight: 700;
+                font-size: 48px;
+                line-height: 100%;
+                letter-spacing: 0%;
+                color: #FFFFFF;
+                height: 44px;
+
+                padding: {
+                    top: 192px;
+                    bottom: 50px;
+                }
+
+                ;
+            }
+
+            &__text {
+                @extend .average_font;
+                line-height: 20px;
+                letter-spacing: 0%;
+
+                color: #FFFFFF;
+                width: 308px;
+                height: 35px;
+                margin-bottom: 50px;
+            }
+
+            button {
+                @include mixins.button("white");
+            }
+        }
+
+        .productList {
+            display: flex;
+            justify-content: space-between;
+
+            &__element {
+                width: 255px;
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                background-color: #FFFFFF;
+
+                img {
+                    padding-top: 25px;
+                    height: 166px;
+                    width: 125px;
+                    object-fit: cover;
+                }
+
+                p {
+                    @extend .average_font;
+                    width: 195px;
+                    line-height: 141%;
+                    text-align: center;
+
+                    padding: 20px 0;
+                }
+
+                p+p {
+                    font-family: Roboto;
+                    font-weight: 500;
+                    font-size: 21px;
+                    line-height: 100%;
+                    letter-spacing: 5%;
+                    text-align: center;
+
+                    padding: 0;
+                    margin-bottom: 20px;
+                }
+
+                button {
+                    @include mixins.button("buy");
+                    margin-bottom: 25px;
+                }
+            }
+        }
+
+        .promoInfo {
+            padding: 100px 0;
+            display: flex;
+            justify-content: space-between;
+
+            p {
+                font-family: Roboto;
+                font-weight: 700;
+                font-size: 18px;
+
+                height: 17px;
+                color: #FFFFFF
+            }
+
+            p+p {
+                @extend .average_font;
+                line-height: 141%;
+
+                width: 129px;
+                height: 40px;
+                padding: 25px 0;
+                color: #FFFFFF;
+            }
+
+            >div {
+                width: 460px;
+                padding: 35px 40px;
+                background-color: $theme;
+                
+                display: flex;
+                align-items: center;
+                justify-content: space-between;
+            }
+            
+            .Mail_Image {
+                width: 140px;
+                height: 106.5px;
+                position: relative;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+
+                >:first-child{
+                    position: absolute;
+                }
+            } 
+
+            >:last-child img{
+                width: 190px;
+                height: 100px;
+            }
+
+            input {
+                width: 175px;
+                height: 17px;
+                padding: 9px 25px;
+
+                border: none;
+                border-radius: 30px;
+                background-color: #FFFFFF;
+                color: #C4C4C4;
+            }
+
+            button {
+                @include mixins.button("white");
+                height: 35px;
+                border-radius: 30px;
+            }
+        }
+
+        .impulsBox {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+
+            img {
+                border: 1px solid $background;
+                padding: 35px 63px;
+                background-color: #FFFFFF;
+            }
+        }
+
+        &>:last-child {
+            padding-bottom: 80px;
         }
     }
-
-    background-image: url(../images/main_pick.jpg);
-    background-size: cover;
 }

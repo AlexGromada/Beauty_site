@@ -7,6 +7,7 @@
 }
 
 @mixin button($type) {
+    @extend .average_font;
     border: 2px solid;
     border-radius: 40px;
     width: 170px;
@@ -25,5 +26,13 @@
         border-color: #FFFFFF;
         color: #FFFFFF;
         background: $theme;
+    }
+
+    @if $type =="buy" {
+        border: none;
+        background-color: $theme;
+        width: 130px;
+        height: 35px;
+        border-radius: 30px;
     }
 }
