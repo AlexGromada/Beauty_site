@@ -1,5 +1,5 @@
-.average_font, .callBack button, .stickyNav ul, .stickyNav a,
-.stickyNav a:visited, main .content .imageBlock__text, main .content .imageBlock button, main .content .productList__element p, main .content .productList__element button, main .content .promoInfo p + p, main .content .promoInfo button, footer .content .contact button {
+.average_font, .callBack button, .topNav ul, .topNav a,
+.topNav a:visited, main .content .imageBlock__text, main .content .imageBlock button, main .content .productList__element p, main .content .productList__element button, main .content .promoInfo p + p, main .content .promoInfo button, footer .content .contact button {
   font-family: Roboto;
   font-weight: 400;
   font-size: 14px;
@@ -67,12 +67,10 @@ a {
   text-decoration: none;
 }
 
-.stickyNav {
+.topNav {
   background-color: #EFEFEF;
-  position: sticky;
-  top: 0;
 }
-.stickyNav ul {
+.topNav ul {
   margin: 0 auto;
   width: 360px;
   height: 17px;
@@ -81,8 +79,8 @@ a {
   display: flex;
   justify-content: space-between;
 }
-.stickyNav a,
-.stickyNav a:visited {
+.topNav a,
+.topNav a:visited {
   color: #333333;
 }
 
