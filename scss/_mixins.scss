@@ -1,5 +1,6 @@
 @use "fonts";
 @use "variables" as *;
+@use "breakpoints" as *;
 
 @mixin medium_font($weight) {
     @extend .medium_font;
@@ -15,24 +16,39 @@
     display: flex;
     justify-content: center;
     align-items: center;
-
+    
     @if $type =="pink" {
         border-color: $theme;
         color: #000000;
         background: white;
     }
-
+    
     @if $type =="white" {
         border-color: #FFFFFF;
         color: #FFFFFF;
         background: $theme;
     }
-
+    
     @if $type =="buy" {
         border: none;
         background-color: $theme;
         width: 130px;
         height: 35px;
         border-radius: 30px;
+        
+        @include respond(tablet) {
+            width: 90px;
+            height: 25px;
+        }
+    }
+
+    @include respond(tablet) {
+        width: 120px;
+        height: 30px;
+    }
+    
+    @include respond(phone) {
+        width: 100px;
+        height: 25px;
     }
 }

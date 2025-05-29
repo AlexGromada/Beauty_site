@@ -1,17 +1,31 @@
+@use "breakpoints" as *;
+
 .average_font {
     font-family: Roboto;
     font-weight: 400;
     font-size: 14px;
+
+    @include respond(phone) {
+        font-size: 12px;
+    }
 }
 
 .small_font {
     font-family: Roboto;
     font-weight: 400;
     font-size: 12px;
+
+    @include respond(phone) {
+        font-size: 10px;
+    }
 }
 
-.medium_font{
+.medium_font {
     font-family: Roboto;
     font-size: 16px;
     letter-spacing: 0;
+
+    @include respond(tablet) {
+        font-size: 14px;
+    }
 }
