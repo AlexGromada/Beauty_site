@@ -1,0 +1,23 @@
+$bp-phone: 375px;
+$bp-tablet: 768px;
+$bp-laptop: 1200px;
+
+@mixin respond($breakpoint) {
+  @if $breakpoint == phone {
+    @media (max-width: $bp-phone) {
+      @content;
+    }
+  } 
+
+  @if $breakpoint == tablet {
+    @media (max-width: $bp-tablet) {
+      @content;
+    }
+  } 
+  
+  @else if $breakpoint == laptop {
+    @media (max-width: $bp-laptop) {
+      @content;
+    }
+  }
+}
