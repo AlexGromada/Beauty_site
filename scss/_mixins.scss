@@ -32,6 +32,7 @@
     @if $type =="buy" {
         border: none;
         background-color: $theme;
+        color: #FFFFFF;
         width: 130px;
         height: 35px;
         border-radius: 30px;
