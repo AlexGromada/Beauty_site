@@ -456,6 +456,7 @@ main .content .productList__element button {
   align-items: center;
   border: none;
   background-color: #F13C6E;
+  color: #FFFFFF;
   width: 130px;
   height: 35px;
   border-radius: 30px;
